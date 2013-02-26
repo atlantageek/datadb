@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dt:</b>
+  <%= @measurement.dt %>
+</p>
+
+<p>
+  <b>Val:</b>
+  <%= @measurement.val %>
+</p>
+
+<p>
+  <b>Metric i:</b>
+  <%= @measurement.metric_i %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

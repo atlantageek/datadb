@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @facet.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @facet.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_facet_path(@facet) %> |
+<%= link_to 'Back', facets_path %>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@metric) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :units %>
+    <%= f.input :frequency %>
+    <%= f.input :seasonal %>
+    <%= f.input :last_updated %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

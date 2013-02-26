@@ -1,0 +1,25 @@
+<h1>Listing facets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facets.each do |facet| %>
+  <tr>
+    <td><%= facet.name %></td>
+    <td><%= facet.category %></td>
+    <td><%= link_to 'Show', facet %></td>
+    <td><%= link_to 'Edit', edit_facet_path(facet) %></td>
+    <td><%= link_to 'Destroy', facet, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facet', new_facet_path %>

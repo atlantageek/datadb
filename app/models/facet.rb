@@ -1,0 +1,5 @@
+class Facet < ActiveRecord::Base
+  belongs_to :category
+  has_and_belongs_to_many :metrics
+  attr_accessible :name
+end
