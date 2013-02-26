@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130223014112) do
+ActiveRecord::Schema.define(:version => 20130226051545) do
+
+  create_table "bacon", :id => false, :force => true do |t|
+    t.date   "dt"
+    t.string "val", :limit => 10
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "facets", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "facets", ["category_id"], :name => "index_facets_on_category_id"
+
+  create_table "facets_metrics", :id => false, :force => true do |t|
+    t.integer "facets_id"
+    t.integer "metrics_id"
+  end
+
+  create_table "measurements", :force => true do |t|
+    t.date     "dt"
+    t.float    "val"
+    t.integer  "metric_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "metrics", :force => true do |t|
+    t.string   "file_path"
+    t.string   "name"
+    t.string   "units"
+    t.string   "frequency"
+    t.string   "seasonal"
+    t.date     "last_updated"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
