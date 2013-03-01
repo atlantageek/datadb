@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130226051545) do
 
-  create_table "bacon", :id => false, :force => true do |t|
-    t.date   "dt"
-    t.string "val", :limit => 10
-  end
-
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
