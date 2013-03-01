@@ -7,6 +7,8 @@ Datadb::Application.routes.draw do
 
   resources :metrics
 
+  match '/home/search' => 'home#search'
+
   root :to => "home#index"
   devise_for :users
 end
